@@ -18,7 +18,7 @@ class CidMiddleware(MiddlewareMixin):
     def __init__(self, *args, **kwargs):
         super(CidMiddleware, self).__init__(*args, **kwargs)
         self.cid_request_header = getattr(
-            settings, 'CID_HEADER', 'X_CORRELATION_ID'
+            settings, 'CID_HEADER', 'HTTP_X_CORRELATION_ID'
         )
         self.cid_response_header = getattr(
             settings, 'CID_RESPONSE_HEADER', self.cid_request_header
